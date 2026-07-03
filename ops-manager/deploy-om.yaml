@@ -4,7 +4,7 @@ metadata:
   name: ops-manager
   namespace: mongodb-operator
 spec:
-  version: "8.0.22"
+  version: "8.0.25"
   adminCredentials: om-admin-secret
   externalConnectivity:
     type: LoadBalancer
@@ -19,11 +19,10 @@ spec:
     mms.mail.ssl: "false"
     mms.mail.transport: smtp
   applicationDatabase:
-    members: 3 # this is the minimum acceptable for AppDB 
+    members: 3 # this is the minimum acceptable for AppDB
     version: "8.2.0"
 
 ---
-
 # This is a Global Owner User used basically only for the initial setup of Ops Manager.
 # It is not recommended to use this user for daily operations
 # For deploying MongoDB resources, an API Key needs to be created in OM UI (e.g. replica-set/secret.yaml)
@@ -37,4 +36,4 @@ stringData:
   Username: "om-admin"
   Password: "ldsflkh@#!@asd42" # strong password needed or OM will not start monitoring for AppDB
   FirstName: "Administrator" # cannot be empty or MCK will not be able to create
-  LastName: "Ops Manager"  # cannot be empty or MCK will not be able to create
+  LastName: "Ops Manager" # cannot be empty or MCK will not be able to create
