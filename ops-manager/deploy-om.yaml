@@ -20,7 +20,7 @@ spec:
     mms.mail.transport: smtp
   applicationDatabase:
     members: 3 # this is the minimum acceptable for AppDB
-    version: "8.2.0"
+    version: "8.3.3"
 
 ---
 # This is a Global Owner User used basically only for the initial setup of Ops Manager.

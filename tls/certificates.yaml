@@ -9,8 +9,8 @@ spec:
   issuerRef:
     name: my-ca-issuer
     kind: ClusterIssuer
-  duration: 240h0m0s
-  renewBefore: 120h0m0s
+  duration: 2160h0m0s
+  renewBefore: 720h0m0s
   usages:
     - digital signature
     - key encipherment
@@ -43,8 +43,8 @@ spec:
   issuerRef:
     name: my-ca-issuer
     kind: ClusterIssuer
-  duration: 240h0m0s
-  renewBefore: 120h0m0s
+  duration: 2160h0m0s
+  renewBefore: 720h0m0s
   usages:
     - digital signature
     - key encipherment
@@ -66,8 +66,8 @@ spec:
   issuerRef:
     name: my-ca-issuer
     kind: ClusterIssuer
-  duration: 240h0m0s
-  renewBefore: 120h0m0s
+  duration: 2160h0m0s
+  renewBefore: 720h0m0s
   usages:
     - digital signature
     - key encipherment

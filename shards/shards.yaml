@@ -11,7 +11,7 @@ spec:
   mongodsPerShardCount: 3
   mongosCount: 2
   configServerCount: 3
-  version: "8.2.0-ent"
+  version: "8.3.3-ent"
   opsManager:
     configMapRef:
       name: my-project
