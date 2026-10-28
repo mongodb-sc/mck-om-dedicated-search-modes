@@ -1,14 +1,27 @@
 apiVersion: mongodb.com/v1
 kind: MongoDBSearch
 metadata:
-  name: replica-set # same name as the MongoDB replica-set resource to avoid specifying source.mongodbResourceRef
+  name: replica-set
   namespace: mongodb-operator
 spec:
-  clusters:
-    - resourceRequirements:
-        limits:
-          cpu: "3"
-          memory: 5Gi
-        requests:
-          cpu: "2"
-          memory: 3Gi
+  replicas: 2
+  loadBalancer:
+    managed: {}
+  resourceRequirements:
+    limits:
+      cpu: "3"
+      memory: 5Gi
+    requests:
+      cpu: "2"
+      memory: 3Gi
+  statefulSet:
+    spec:
+      template:
+        spec:
+          nodeSelector:
+            workload: search
+          tolerations:
+            - key: dedicated
+              operator: Equal
+              value: search
+              effect: NoSchedule
